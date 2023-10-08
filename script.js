@@ -280,6 +280,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "price": 2.95
         }
     ]
+    const dataJSON = localStorage.getItem('freespacefair');
+
+// Parse the JSON string back into an array of objects
+const data = JSON.parse(dataJSON);
+freespacefair=data;
 
     let summaryresult = [];
     let removeall = [];
@@ -331,6 +336,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 // You can perform further processing or send the data as needed
                 freespacefair = data;
                 console.log(data);
+                const dataJSON = JSON.stringify(data);
+
+// Store the JSON string in local storage
+localStorage.setItem('freespacefair', dataJSON);
                 // $("#quote-table tbody").empty();
                 alert("success")
             }
